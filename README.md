@@ -65,6 +65,33 @@ git **clone** https://github.com/prajeeshag/iitm-esm.git
 5. gfs/nc_combine_gfs/nc_combine_gfs.exe >for atmospheric model
 
 - **STEP 4>** Give the path of these executables in the runscript ( esm_submit_pratyush.pbs) 
+### NAMELISTS
+- Vi gfs_namelist  (atmosphere namelist)
+Current_time is not taking from here, it is taken from the timestamp file
+fhout=24
+fhmax=85416 * (total time of the model run in hours, set for almost 10 yrs here)
+igen=199
+deltim=600  >delta time step
+restart_interval=0,3,0,0,0,0  (year, mon, days, hours, seconds) >3 monthly output frequency now
+jcap=126 >atm resolution
+levs=64
+ictm=1  >need to be checked and confirmed for DP 
+
+- vi input.nml (ocean namelist)
+&generic_tracer_nml
+       do_generic_tracer=.false.
+       do_generic_CFC=.false.                 ! no CFCs  (BGC is off now)
+       do_generic_TOPAZ=.false.
+       
+ #### RUN SUBMISSION (how to submit a run?)
+
+Vi esm_submit_pratyush.pbs
+#PBS -q ocn  (set the name of your queue here!)
+Set the path of executables (atm,ocn,aocoupler)
+qsub esm_submit_pratyush.pbs
+qstat (to check the running status)
+Tail -f out.aprun   (to check the log files of the model run)
+
 
 
 
