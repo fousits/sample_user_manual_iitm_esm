@@ -83,6 +83,22 @@ ictm=1  >need to be checked and confirmed for DP
        do_generic_CFC=.false.                 ! no CFCs  (BGC is off now)
        do_generic_TOPAZ=.false.
        
+ ##### Edits to be made in the namelists/tables before test run if you have forked/cloned the esm code from github
+ ##### These are just for testing. You could set the output frequency according your problem of interest.
+- For MOM:
+Input.nml >make_exchange_reproduce = .false.
+data_table >Comment or delete all the lines with “OCN” and the last two lines with “ATM”
+Diag_table>Change the output frequency to months and replace “OUTPUT/ICE” and “OUTPUT/OCN” by “OUTPUT”
+For example, change the following line
+< "OUTPUT/OCN/ocean%4yr%2mo%2dy",            24,  "hours", 1, "hours", "time",24, "hours", "1801 1 1 0 0 0",
+ as follows:
+"OUTPUT/ocean%4yr%2mo%2dy",          1,  "months", 1, "hours", "time",1, "months", "1801 1 1 0 0 0",
+Also, I have commented the topaz (BGC module) line for testing (Prajeesh Suggested)
+- **For GFS**:
+atm_diag_table >replace “OUTPUT/ATM/MON” by “OUTPUT” (to change where the output files are being generated)
+Also, comment the following line (to write monthly outputs)
+OUTPUT/ATM/DAY/atm_day%4yr%2mo%2dy%2hr", 1,  "days", 1, "hours", "time", 1, "days"
+
  #### RUN SUBMISSION (how to submit a run?)
 
 Vi esm_submit_pratyush.pbs
@@ -91,6 +107,7 @@ Set the path of executables (atm,ocn,aocoupler)
 qsub esm_submit_pratyush.pbs
 qstat (to check the running status)
 Tail -f out.aprun   (to check the log files of the model run)
+
 
 
 
