@@ -103,10 +103,10 @@ OUTPUT/ATM/DAY/atm_day%4yr%2mo%2dy%2hr", 1,  "days", 1, "hours", "time", 1, "day
 
 Vi esm_submit_pratyush.pbs
 #PBS -q ocn  (set the name of your queue here!)
-Set the path of executables (atm,ocn,aocoupler)
-qsub esm_submit_pratyush.pbs
-qstat (to check the running status)
-Tail -f out.aprun   (to check the log files of the model run)
+***Set the path of executables (atm,ocn,aocoupler)***
+- qsub esm_submit_pratyush.pbs
+- qstat (to check the running status)
+- Tail -f out.aprun   (to check the log files of the model run)
 
 
 
