@@ -1,5 +1,5 @@
 ###### sample_user_manual_iitm_esm
-- Please have a look at it @prajeeshag 
+ 
 - Set up a user manual for iitm-esm-how to get the code, how to compile and how to make runs
 - Initiated by fousiyats@tropmet.res.in (08/04/2022)
 
