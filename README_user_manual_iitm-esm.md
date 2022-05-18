@@ -108,7 +108,7 @@ Vi esm_submit_pratyush.pbs
 - qstat (to check the running status)
 - Tail -f out.aprun   (to check the log files of the model run)
 
-***The model is different from IITM-ESMv2 for the following reasons:***
+***The model (to be used for decadal prediction efforts) is different from IITM-ESMv2 for the following reasons:***
 - Aerosol data and land use land cover data used in IITM-ESMv2 are different 
 - The resolution of IITM-ESMv2 is T62, whereas here it is T126
 - IITM-ESMv2 runs with biogeochemistry in the ocean
