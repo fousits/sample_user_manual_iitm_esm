@@ -108,16 +108,6 @@ Vi esm_submit_pratyush.pbs
 - qstat (to check the running status)
 - Tail -f out.aprun   (to check the log files of the model run)
 
-***The model (to be used for decadal prediction efforts) is different from IITM-ESMv2 for the following reasons:***
-- Aerosol data and land use land cover data used in IITM-ESMv2 are different 
-- The resolution of IITM-ESMv2 is T62, whereas here it is T126
-- IITM-ESMv2 runs with biogeochemistry in the ocean
-
-***Rather than concentrating of how this model is different from IITM-ESMv2 let’s concentrate on what we got and what we implemented until now.
- - 1.	We got IITM-ESMv1.
- - 2.	We made all the changes required to make it radiatively balanced.
- -  3.	We implemented the new Input/Output manager for efficient handling of input/output data.
- ***Changes made in IITM-ESMv1 to make it radiatively balanced
 
 
 
